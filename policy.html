@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policies - ReVIVE9 Handcrafted Jewelry</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #baa656;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 2rem 5%;
+            text-align: center;
+            background-color: rgba(245, 243, 235, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #baa656;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+            max-width: 100%;
+            display: inline-block;
+            object-fit: contain;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: #6b6b6b;
+            font-style: italic;
+        }
+
+        nav {
+            margin-top: 1.5rem;
+        }
+
+        nav a {
+            margin: 0 1.5rem;
+            text-decoration: none;
+            color: #2c2c2c;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #baa656;
+        }
+
+        .policy-section {
+            padding: 4rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #f5f3eb;
+            margin-bottom: 2rem;
+            letter-spacing: 3px;
+        }
+
+        .policy-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .policy-nav button {
+            background-color: #f5f3eb;
+            color: #2c2c2c;
+            border: 2px solid #baa656;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: 'Georgia', serif;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .policy-nav button:hover,
+        .policy-nav button.active {
+            background-color: #baa656;
+            color: #f5f3eb;
+        }
+
+        .policy-container {
+            background-color: #f5f3eb;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            display: none;
+        }
+
+        .policy-container.active {
+            display: block;
+        }
+
+        .highlight-box {
+            background-color: #baa656;
+            color: #f5f3eb;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        .highlight-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .highlight-box p {
+            color: #f5f3eb;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .highlight-box strong {
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        .highlight-box a {
+            color: #f5f3eb;
+            text-decoration: underline;
+        }
+
+        .highlight-box a:hover {
+            color: #2c2c2c;
+        }
+
+        .policy-content h3 {
+            font-size: 1.8rem;
+            color: #baa656;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .policy-content h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .policy-content h4 {
+            font-size: 1.5rem;
+            color: #baa656;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .policy-content p {
+            font-size: 1.05rem;
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .policy-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-content li {
+            font-size: 1.05rem;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .policy-content a {
+            color: #baa656;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .policy-content a:hover {
+            color: #a39148;
+            text-decoration: underline;
+        }
+
+        .contact-box {
+            background-color: #f5f3eb;
+            border: 2px solid #baa656;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+        }
+
+        .contact-box h4 {
+            font-size: 1.5rem;
+            color: #baa656;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .contact-box p {
+            font-size: 1.05rem;
+            color: #2c2c2c;
+            line-height: 1.8;
+        }
+
+        footer {
+            background-color: #f5f3eb;
+            padding: 2rem 5%;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            color: #6b6b6b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                height: 50px;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .policy-container {
+                padding: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .highlight-box {
+                padding: 1.5rem;
+            }
+
+            .policy-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .policy-content h4 {
+                font-size: 1.3rem;
+            }
+
+            .policy-content p,
+            .policy-content li {
+                font-size: 1rem;
+            }
+
+            .policy-nav {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .policy-nav button {
+                width: 100%;
+            }
+        }
+
+        .cart {
+            position: absolute;
+            top: 1.6rem;
+            right: 5%;
+            font-size: 0.95rem;
+            color: #2c2c2c;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        #cart-count {
+            background: #baa656;
+            color: #f5f3eb;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            font-weight: 600;
+            min-width: 28px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Revive39-logo.png" alt="ReVIVE9" width="180">
+        </div>
+        
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="shop.html">SHOP</a>
+            <a href="NW_Arrivals.html">NEW ARRIVALS</a>
+            <a href="about2.html">MY STORY</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="policy.html">POLICIES</a>
+        </nav>
+
+        <a href="cart.html" class="cart" aria-live="polite" aria-atomic="true">
+            CART <span id="cart-count">0</span>
+        </a>
+    </header>
+
+    <section class="policy-section">
+        <h2 class="section-title">OUR POLICIES</h2>
+        
+        <div class="policy-nav">
+            <button onclick="showPolicy('refund')" class="active" id="btn-refund">Refund & Return</button>
+            <button onclick="showPolicy('shipping')" id="btn-shipping">Shipping</button>
+            <button onclick="showPolicy('privacy')" id="btn-privacy">Privacy</button>
+            <button onclick="showPolicy('terms')" id="btn-terms">Terms of Service</button>
+        </div>
+
+        <!-- Refund & Return Policy -->
+        <div id="policy-refund" class="policy-container active">
+            <div class="highlight-box">
+                <h3>Quick Reference</h3>
+                <p><strong>Contact:</strong> <a href="mailto:ShopReVIVE9@gmail.com">ShopReVIVE9@gmail.com</a></p>
+                <p><strong>Returns Accepted Within:</strong> Five (5) days of delivery</p>
+                <p><strong>Restocking Fee:</strong> 10%</p>
+                <p><strong>Return Shipping:</strong> Buyer pays (except damaged/incorrect items)</p>
+            </div>
+
+            <div class="policy-content">
+                <h3>Refund & Return Policy</h3>
+                
+                <h4>Returns</h4>
+                <p>If for any reason you are not happy with your purchase, you must contact us within five (5) days of receiving your order to initiate a return.</p>
+                <p>After the 5-day return window, no returns or exchanges will be accepted.</p>
+                <p>A 10% restocking fee will be applied to all eligible returns, and the remaining balance will be issued as store credit only.</p>
+                <p>Returned items must be unworn, unaltered, and include all original tags and packaging. Items that do not meet these criteria will be denied and returned to the sender.</p>
+                <p>You will be notified once your return has been received and processed.</p>
+
+                <h4>Non-Returnable Items</h4>
+                <p>The following items cannot be returned:</p>
+                <ul>
+                    <li>Clearance / Sale / Discounted items</li>
+                    <li>Personalized items</li>
+                </ul>
+
+                <h4>Damaged or Incorrect Items</h4>
+                <p>If your order arrives damaged or incorrect, you must contact us within three (3) days of delivery and provide clear photos of the issue.</p>
+                <p>For approved damage or incorrect-item claims, ReVIVE9 will provide a pre-paid return shipping label.</p>
+                <p>All items must be returned in original condition (unworn, unaltered) with packaging and tags intact.</p>
+
+                <h4>Item(s) Missing from Order</h4>
+                <p><strong>Contact:</strong> <a href="mailto:ShopReVIVE9@gmail.com">ShopReVIVE9@gmail.com</a></p>
+                <p>Include:</p>
+                <ul>
+                    <li>A copy of your original invoice</li>
+                    <li>A photo of what you received</li>
+                </ul>
+                <p>For incorrect items, ReVIVE9 will provide a pre-paid label after verification.</p>
+
+                <div class="contact-box">
+                    <h4>Contact Information</h4>
+                    <p>
+                        ReVIVE9 By TJ Dezigns<br>
+                        Post Office Box<br>
+                        Columbia, South Carolina 23224<br>
+                        United States
+                    </p>
+                    <p>Email: <a href="mailto:ShopReVIVE9@gmail.com">ShopReVIVE9@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shipping Policy -->
+        <div id="policy-shipping" class="policy-container">
+            <div class="highlight-box">
+                <h3>Quick Reference</h3>
+                <p><strong>Standard Shipping:</strong> 3-5 Business Days</p>
+                <p><strong>Free Shipping:</strong> Orders over $60 (U.S. continental)</p>
+                <p><strong>Payment Methods:</strong> Visa, Mastercard, American Express, Discover, Cash App, Zelle, Venmo</p>
+            </div>
+
+            <div class="policy-content">
+                <h3>Shipping Policy</h3>
+                
+                <h4>Standard Shipping (3-5 Business Days)</h4>
+                <p>Free shipping is available on all U.S. continental orders over $60 (subtotal).</p>
+
+                <h4>Lost / Stolen Packages</h4>
+                <p>ReVIVE9 is not responsible for lost or stolen packages.</p>
+
+                <h4>Payment Processing</h4>
+                <p>We accept all major credit cards/debit cards (Visa, American Express, Master Card, Discover), Cash App, Zelle and Venmo.</p>
+
+                <h4>Pre-Order Policy</h4>
+                <p>The Pre-Order feature enables customers to secure products ahead of their official release or restock. This ensures early access to new ReVIVE9 collections and exclusive limited-edition items.</p>
+
+                <h4>Pre-Order Terms</h4>
+                <ul>
+                    <li>Pre-order items cannot be cancelled or refunded once the order has been placed.</li>
+                    <li>Estimated shipping dates are based on the production of the item.</li>
+                    <li>Dates are not guaranteed and delays may occur due to production or shipping and factors outside of ReVIVE9 control.</li>
+                    <li>Your payment method will be charged immediately at checkout to reserve your item.</li>
+                </ul>
+
+                <h4>Shipping for Pre-Orders</h4>
+                <p>Pre-order items will be shipped as soon as they have been produced.</p>
+                <p>If your order contains both pre-order and in-stock items, they may ship separately.</p>
+
+                <div class="contact-box">
+                    <h4>Contact Information</h4>
+                    <p>
+                        ReVIVE9 By TJ Dezigns<br>
+                        Post Office Box<br>
+                        Columbia, South Carolina<br>
+                        United States
+                    </p>
+                    <p>Email: <a href="mailto:ShopReVIVE9@gmail.com">ShopReVIVE9@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy Policy -->
+        <div id="policy-privacy" class="policy-container">
+            <div class="highlight-box">
+                <h3>Your Privacy Matters</h3>
+                <p>ReVIVE9 is committed to ensuring the security of your personal information.</p>
+                <p><strong>We NEVER sell or misuse your personal information.</strong></p>
+            </div>
+
+            <div class="policy-content">
+                <h3>Privacy Policy</h3>
+                
+                <p>ReVIVE9 is committed to ensuring the security of your personal information. We employ rigorous physical, electronic, and managerial safeguards to protect the data collected through our website and to prevent unauthorized access or disclosure.</p>
+
+                <h4>Information We Collect</h4>
+                <p>ReVIVE9 may collect the following types of information:</p>
+                <ul>
+                    <li>Name and phone number</li>
+                    <li>Contact information including email address</li>
+                    <li>Demographic information such as postcode, preferences, and interests</li>
+                </ul>
+
+                <h4>How We Use the Information We Collect</h4>
+                <p>We use your information for the following purposes:</p>
+
+                <h4>Internal Operations</h4>
+                <ul>
+                    <li>Maintain accurate internal records</li>
+                    <li>Improve our products, services, and customer experience</li>
+                </ul>
+
+                <h4>Communication</h4>
+                <ul>
+                    <li>Send promotional emails about new items, special offers, or updates</li>
+                    <li>Contact you regarding order updates or customer support needs</li>
+                    <li>Communicate via email, phone, or mail depending on the situation</li>
+                </ul>
+
+                <h4>Website Personalization</h4>
+                <ul>
+                    <li>Tailor our website and product recommendations to your interests</li>
+                </ul>
+
+                <h4>Marketing</h4>
+                <ul>
+                    <li>Share limited information with trusted third-party partners for marketing or promotional purposes</li>
+                </ul>
+                <p><strong>We NEVER sell or misuse your personal information.</strong></p>
+                <p>All third-party partners are required to protect your data and use it only for approved purposes.</p>
+
+                <h4>Security</h4>
+                <p>ReVIVE9 takes your privacy seriously. Our website and internal systems use secure practices designed to protect your data from unauthorized access.</p>
+
+                <h4>Your Consent</h4>
+                <p>By using our website, you consent to this Privacy Policy.</p>
+
+                <h4>Updates to This Policy</h4>
+                <p>ReVIVE9 may occasionally update this policy to reflect changes in our practices. Any updates will be posted on this page.</p>
+
+                <div class="contact-box">
+                    <h4>Contact Information</h4>
+                    <p>If you have any questions about this Privacy Policy or your personal information, please contact us:</p>
+                    <p>
+                        ReVIVE9 By TJ Dezigns.<br>
+                        Post Office Box<br>
+                        Columbia, SC<br>
+                        United States
+                    </p>
+                    <p>Email: <a href="mailto:ShopReVIVE9@gmail.com">ShopReVIVE9@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms of Service -->
+        <div id="policy-terms" class="policy-container">
+            <div class="highlight-box">
+                <h3>Important Notice</h3>
+                <p>By using or making a purchase through this website, you acknowledge and agree to these Terms of Service.</p>
+                <p><strong>Please review them carefully before proceeding.</strong></p>
+            </div>
+
+            <div class="policy-content">
+                <h3>Terms of Service</h3>
+                
+                <p>Welcome to ReVIVE9. By using or making a purchase through this website, you acknowledge and agree to the following Terms of Service. Please review them carefully before proceeding.</p>
+
+                <h4>1. General Conditions</h4>
+                <p>ReVIVE9 reserves the right to refuse service to any individual at any time and for any reason. You acknowledge that your content (excluding payment information) may be transmitted over various networks in an unencrypted format. Payment information, however, is always encrypted and securely processed through trusted payment gateways.</p>
+
+                <h4>2. Online Store Terms</h4>
+                <p>By using this site, you confirm that you are of legal age in your state or province of residence. You also agree not to use these items for any unlawful or unauthorized purpose.</p>
+
+                <h4>3. Accuracy of Information</h4>
+                <p>ReVIVE9 strives to ensure that all item descriptions, pricing, and availability details on this site are accurate. Nonetheless, errors may arise from time to time. ReVIVE9 reserves the right to correct such errors, revise or update information, or cancel orders affected by inaccuracies at any time and without prior notice.</p>
+
+                <h4>4. Modifications to Products and Prices</h4>
+                <p>All prices are subject to change without prior notice. ReVIVE9 retains the right to alter or discontinue any item at any time. ReVIVE9 shall not be held liable for any modifications, price adjustments, suspensions, or discontinuations of any items or service.</p>
+
+                <h4>5. Orders and Billing Information</h4>
+                <p>We reserve the right to:</p>
+                <ul>
+                    <li>Refuse any order</li>
+                    <li>Limit or cancel quantities purchased per person, per address, or per order</li>
+                    <li>Contact you if an order needs verification or adjustment</li>
+                </ul>
+                <p>You agree to supply up-to-date, complete, and accurate information for all purchases made on this site.</p>
+
+                <h4>6. Third-Party Tools and Links</h4>
+                <p>ReVIVE9 may provide access to third-party tools or external links that are not supervised or managed by us. We assume no responsibility for any third-party websites, content, or activities.</p>
+
+                <h4>7. Personal Information</h4>
+                <p>Any personal information you provide through the store is handled in accordance with our Privacy Policy.</p>
+
+                <h4>8. Prohibited Uses</h4>
+                <p>You are prohibited from using the website or its content for:</p>
+                <ul>
+                    <li>Any unlawful purpose</li>
+                    <li>Violating any regulations or rules</li>
+                    <li>Harassing or abusing others</li>
+                    <li>Uploading viruses or harmful code</li>
+                    <li>Collecting personal information without consent</li>
+                </ul>
+
+                <h4>9. Disclaimer</h4>
+                <p>We do not guarantee that:</p>
+                <ul>
+                    <li>The website will be error-free</li>
+                    <li>Your use of the service will be uninterrupted</li>
+                    <li>Results obtained from the service will be accurate or reliable</li>
+                </ul>
+                <p>You use this website at your own risk.</p>
+
+                <h4>10. Limitation of Liability</h4>
+                <p>ReVIVE9 shall not be liable for any:</p>
+                <ul>
+                    <li>Direct, indirect, incidental, punitive, or consequential damages</li>
+                    <li>Loss of data, revenue, or profits</li>
+                    <li>Any damage arising from your use of the items</li>
+                </ul>
+                <p>Certain jurisdictions may not allow the exclusion or limitation of liability. In such instances, our liability shall be restricted only to the extent permitted by applicable law.</p>
+
+                <h4>11. Indemnification</h4>
+                <p>You agree to indemnify, defend, and hold harmless ReVIVE9 from any claims arising from:</p>
+                <ul>
+                    <li>Your breach of these Terms</li>
+                    <li>Your violation of any laws</li>
+                    <li>Your use of the website</li>
+                </ul>
+
+                <h4>12. Changes to Terms</h4>
+                <p>ReVIVE9 may modify these Terms of Service at any time.</p>
+                <p>Continued use of the website after changes means you accept the revised terms.</p>
+
+                <div class="contact-box">
+                    <h4>Contact Information</h4>
+                    <p>For questions about these Terms of Service, please contact:</p>
+                    <p>
+                        ReVIVE9 By TJ Dezigns.<br>
+                        Post Office Box<br>
+                        Columbia, SC<br>
+                        United States
+                    </p>
+                    <p>Email: <a href="mailto:ShopReVIVE9@gmail.com">ShopReVIVE9@gmail.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ReVIVE9. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showPolicy(policyName) {
+            // Hide all policy containers
+            const containers = document.querySelectorAll('.policy-container');
+            containers.forEach(container => {
+                container.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.policy-nav button');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected policy
+            document.getElementById('policy-' + policyName).classList.add('active');
+            document.getElementById('btn-' + policyName).classList.add('active');
+
+            // Scroll to top of policy section
+            document.querySelector('.policy-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize cart count from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('cart-count').textContent = cart.length;
+        });
+    </script>
+</body>
+</html>

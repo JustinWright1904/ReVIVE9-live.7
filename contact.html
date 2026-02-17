@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - ReVIVE9 Handcrafted Jewelry</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #baa656;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 2rem 5%;
+            text-align: center;
+            background-color: rgba(245, 243, 235, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #baa656;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+            max-width: 100%;
+            display: inline-block;
+            object-fit: contain;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: #6b6b6b;
+            font-style: italic;
+        }
+
+        nav {
+            margin-top: 1.5rem;
+        }
+
+        nav a {
+            margin: 0 1.5rem;
+            text-decoration: none;
+            color: #2c2c2c;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #baa656;
+        }
+
+        .contact-section {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 300;
+            color: #f5f3eb;
+            margin-bottom: 3rem;
+            letter-spacing: 3px;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-form,
+        .contact-info {
+            background-color: #f5f3eb;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h3,
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: #baa656;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c2c2c;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #d4c5a0;
+            border-radius: 5px;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+            background-color: #fff;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #baa656;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background-color: #baa656;
+            color: #f5f3eb;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: 'Georgia', serif;
+        }
+
+        .submit-btn:hover {
+            background-color: #a39148;
+        }
+
+        .contact-info p {
+            font-size: 1.05rem;
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .contact-info strong {
+            color: #baa656;
+            display: block;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info a {
+            color: #baa656;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #a39148;
+            text-decoration: underline;
+        }
+
+        .policy-section {
+            background-color: #f5f3eb;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .policy-section h3 {
+            font-size: 1.8rem;
+            color: #baa656;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .policy-content h4 {
+            font-size: 1.3rem;
+            color: #2c2c2c;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .policy-content p {
+            font-size: 1.05rem;
+            color: #2c2c2c;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .policy-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-content li {
+            font-size: 1.05rem;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background-color: #baa656;
+            color: #f5f3eb;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box p {
+            color: #f5f3eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box strong {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        footer {
+            background-color: #f5f3eb;
+            padding: 2rem 5%;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            color: #6b6b6b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                height: 50px;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-form,
+            .contact-info,
+            .policy-section {
+                padding: 2rem;
+            }
+
+            .contact-form h3,
+            .contact-info h3,
+            .policy-section h3 {
+                font-size: 1.5rem;
+            }
+
+            .policy-content h4 {
+                font-size: 1.2rem;
+            }
+
+            .policy-content p,
+            .policy-content li,
+            .contact-info p {
+                font-size: 1rem;
+            }
+        }
+
+        .cart {
+            position: absolute;
+            top: 1.6rem;
+            right: 5%;
+            font-size: 0.95rem;
+            color: #2c2c2c;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        #cart-count {
+            background: #baa656;
+            color: #f5f3eb;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            font-weight: 600;
+            min-width: 28px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Revive39-logo.png" alt="ReVIVE9" width="180">
+        </div>
+        
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="shop.html">SHOP</a>
+            <a href="NW_Arrivals.html">NEW ARRIVALS</a>
+            <a href="about2.html">MY STORY</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="policy.html">POLICIES</a>
+        </nav>
+
+        <a href="cart.html" class="cart" aria-live="polite" aria-atomic="true">
+        CART <span id="cart-count">0</span>
+        </a>
+    </header>
+
+    <section class="contact-section">
+        <h2 class="section-title">CONTACT US</h2>
+        
+        <div class="contact-container">
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>We'd love to hear from you! Whether you have a question about our products, need assistance with an order, or want to discuss custom pieces, feel free to reach out.</p>
+
+                <strong>Email:</strong>
+                <p><a href="mailto:hello@shopReVIVE9.com">ShopReVIVE9@gmail.com</a></p>
+
+                <strong>Mailing Address:</strong>
+                <p>
+                    ReVIVE9 By TJ Dezigns<br>
+                    Post Office Box<br>
+                    Columbia, South Carolina 23224<br>
+                    United States
+                </p>
+
+                <strong>Business Hours:</strong>
+                <p>We typically respond to all inquiries within 1-2 business days.</p>
+            </div>
+        </div>
+
+        
+    <footer>
+        <p>&copy; 2026 ReVIVE9. All rights reserved.</p>
+    </footer>
+</body>
+</html>

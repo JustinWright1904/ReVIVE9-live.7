@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReVIVE9 - Handcrafted Jewelry</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #baa656;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 2rem 5%;
+            text-align: center;
+            background-color: rgba(245, 243, 235, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #baa656;
+            margin-bottom: 0.5rem;
+        }
+
+       .logo img {
+            height: 100px;  /* Bigger default size */
+            width: auto;
+            max-width: 100%;
+            display: inline-block;
+            object-fit: contain;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: #6b6b6b;
+            font-style: italic;
+        }
+
+        nav {
+            margin-top: 1.5rem;
+        }
+
+        nav a {
+            margin: 0 1.5rem;
+            text-decoration: none;
+            color: #2c2c2c;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #baa656;
+        }
+
+        /* Bio Section Styles */
+        .bio {
+            padding: 4rem 5%;
+            background-color: #f5f3eb;
+            margin: 0 0 3rem 0;
+        }
+
+        .bio-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .bio-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 300;
+            color: #baa656;
+            margin-bottom: 2.5rem;
+            letter-spacing: 3px;
+        }
+
+        .bio-content {
+            text-align: center;
+        }
+
+        .bio-content p {
+            font-size: 1.05rem;
+            color: #2c2c2c;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .bio-signature {
+            margin-top: 2rem;
+            font-style: italic;
+            color: #6b6b6b;
+        }
+        .product-image {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #d4c5a0 0%, #baa656 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #f5f3eb;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+        .bio-name {
+            font-size: 1.1rem;
+            color: #baa656;
+            font-weight: 600;
+            margin-top: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .products {
+            padding: 3rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 300;
+            color: #f5f3eb;
+            margin-bottom: 3rem;
+            letter-spacing: 3px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: #f5f3eb;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #d4c5a0 0%, #baa656 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #f5f3eb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ribbon {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(186,166,86,0.88);
+            transition: bottom 0.4s ease;
+        }
+
+        .product-card:hover .ribbon {
+            bottom: 0;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #2c2c2c;
+            font-weight: 400;
+        }
+
+        .product-description {
+            font-size: 0.9rem;
+            color: #6b6b6b;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            color: #baa656;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: #baa656;
+            color: #f5f3eb;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: #a39148;
+        }
+
+        /* Thank You Section */
+        .thank-you {
+            padding: 4rem 5%;
+            background-color: #f5f3eb;
+            margin: 3rem 0 0 0;
+            border: 8px solid #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .thank-you-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .thank-you-title {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #baa656;
+            margin-bottom: 2rem;
+            letter-spacing: 2px;
+            line-height: 1.4;
+        }
+
+        .thank-you-content {
+            text-align: center;
+        }
+
+        .thank-you-content p {
+            font-size: 1.05rem;
+            color: #2c2c2c;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        footer {
+            background-color: #f5f3eb;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            color: #6b6b6b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                height: 50px;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .bio-content p,
+            .thank-you-content p {
+                font-size: 1rem;
+            }
+
+            .bio-title,
+            .thank-you-title {
+                font-size: 1.5rem;
+            }
+
+            .cart {
+                font-size: 0.85rem;
+            }
+        }
+
+        .cart {
+            position: absolute;
+            top: 1.6rem;
+            right: 5%;
+            font-size: 0.95rem;
+            color: #2c2c2c;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        #cart-count {
+            background: #baa656;
+            color: #f5f3eb;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            font-weight: 600;
+            min-width: 28px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Revive39-logo.png" alt="ReVIVE9" width="180">
+        </div>
+        
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="shop.html">SHOP</a>
+            <a href="NW_Arrivals.html">NEW ARRIVALS</a>
+            <a href="about2.html">MY STORY</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="policy.html">POLICIES</a>
+        </nav>
+
+        <a href="cart.html" class="cart" aria-live="polite" aria-atomic="true">
+        CART <span id="cart-count">0</span>
+        </a>
+       
+    </header>
+
+    <section class="bio">
+        <div class="bio-container">
+            <h2 class="bio-title">Meet the Maker</h2>
+            <div class="bio-content">
+                <p>Hi there! I'm Terry Jeffery, the creator and maker behind ReVIVE9. What began as a creative outlet in my living room has grown into a handcrafted jewelry line built on creativity, intention, and everyday style.</p>
+                
+                <p>Every piece in ReVIVE9 is designed and handmade by me—no mass production, no shortcuts, no outsourcing. Just thoughtful, unique jewelry crafted with care and a genuine love for the details.</p>
+                
+                <p>My goal is simple: to elevate your everyday wear with pieces that feel special, effortless, and uniquely you. Whether you're dressing up or keeping it casual, I hope ReVIVE9 brings that perfect finishing touch to your look.</p>
+                
+                <p class="bio-signature">Thank you so much for supporting handmade and for being part of the ReVIVE9 journey!</p>
+                
+                <p class="bio-name">— Terry Jeffery</p>
+            </div>
+        </div>
+    </section>
+           
+    <section class="products">
+        <h2 class="section-title">FEATURED COLLECTION</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="ribbon"></div>
+                    <img src="IMG_9679.jpeg" alt="Bracelet">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Bracelet</h3>
+                    <p class="product-description">Gray, glossy black, and gold beads with ivory tones and a marbled white-and-gray stone.</p>
+                    <p class="product-price">$10.00</p>
+                    <a href="#" class="btn">ADD TO CART</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="ribbon"></div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Space holder</h3>
+                    <p class="product-description">detailing</p>
+                    <p class="product-price">$</p>
+                    <a href="#" class="btn">ADD TO CART</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="ribbon"></div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Space holder</h3>
+                    <p class="product-description">detailing</p>
+                    <p class="product-price">$</p>
+                    <a href="#" class="btn">ADD TO CART</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="ribbon"></div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Space holder</h3>
+                    <p class="product-description">Detailing</p>
+                    <p class="product-price">$</p>
+                    <a href="#" class="btn">ADD TO CART</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="ribbon"></div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Space holder</h3>
+                    <p class="product-description">detailing</p>
+                    <p class="product-price">$</p>
+                    <a href="#" class="btn">ADD TO CART</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <div class="ribbon"></div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Space holder</h3>
+                    <p class="product-description">detailing</p>
+                    <p class="product-price">$</p>
+                    <a href="#" class="btn">ADD TO CART</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="thank-you">
+        <div class="thank-you-container">
+            <h2 class="thank-you-title">Thank you so much for supporting ReVIVE9!</h2>
+            <div class="thank-you-content">
+                <p>I'm truly grateful you chose a handmade piece from my collection. Each item is designed and crafted by me with care, intention, and a love for elevating everyday style.</p>
+                
+                <p>I hope your new jewelry brings a little extra shine to your day and becomes one of your go-to favorites.</p>
+                
+                <p class="bio-signature">Thank you for supporting handmade and for being part of the ReVIVE9 journey!</p>
+                
+                <p class="bio-name">— Terry Jeffery</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ReVIVE9. All rights reserved.</p>
+    </footer>
+
+    <script>
+        (function () {
+            let cartCount = 0;
+            const cartEl = document.getElementById('cart-count');
+
+            document.querySelectorAll('.btn').forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    cartCount++;
+                    cartEl.textContent = cartCount;
+
+                    const original = this.textContent;
+                    this.textContent = 'ADDED ✓';
+                    this.classList.add('added-temp');
+                    this.setAttribute('aria-pressed', 'true');
+
+                    setTimeout(() => {
+                        this.textContent = original;
+                        this.classList.remove('added-temp');
+                        this.removeAttribute('aria-pressed');
+                    }, 1100);
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

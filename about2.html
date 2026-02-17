@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - ReVIVE9 Handcrafted Jewelry</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #baa656;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 2rem 5%;
+            text-align: center;
+            background-color: rgba(245, 243, 235, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: #baa656;
+            margin-bottom: 0.5rem;
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+            max-width: 100%;
+            display: inline-block;
+            object-fit: contain;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            color: #6b6b6b;
+            font-style: italic;
+        }
+
+        nav {
+            margin-top: 1.5rem;
+        }
+
+        nav a {
+            margin: 0 1.5rem;
+            text-decoration: none;
+            color: #2c2c2c;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #baa656;
+        }
+
+        .about-section {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 300;
+            color: #f5f3eb;
+            margin-bottom: 3rem;
+            letter-spacing: 3px;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            background-color: #f5f3eb;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #d4c5a0 0%, #baa656 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .about-text {
+            padding: 2rem;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: #baa656;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            color: #2c2c2c;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        footer {
+            background-color: #f5f3eb;
+            padding: 2rem 5%;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            color: #6b6b6b;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                height: 50px;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem;
+            }
+
+            .about-image {
+                height: 350px;
+            }
+
+            .about-text {
+                padding: 1rem;
+            }
+
+            .about-text h3 {
+                font-size: 1.5rem;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+            }
+        }
+
+        .cart {
+            position: absolute;
+            top: 1.6rem;
+            right: 5%;
+            font-size: 0.95rem;
+            color: #2c2c2c;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        #cart-count {
+            background: #baa656;
+            color: #f5f3eb;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            font-weight: 600;
+            min-width: 28px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Revive39-logo.png" alt="ReVIVE9" width="180">
+        </div>
+        
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="shop.html">SHOP</a>
+            <a href="NW_Arrivals.html">NEW ARRIVALS</a>
+            <a href="about2.html">MY STORY</a>
+            <a href="contact.html">CONTACT</a>
+            <a href="policy.html">POLICY</a>
+        </nav>
+
+        <a href="cart.html" class="cart" aria-live="polite" aria-atomic="true">
+        CART <span id="cart-count">0</span>
+        </a>
+    </header>
+
+    <section class="about-section">
+        <h2 class="section-title">My Story</h2>
+        
+        <div class="about-container">
+            <div class="about-image">
+                <!-- Replace the src below with your actual image path -->
+                <img src="TerryJAbout.png" alt="About ReVIVE9">
+                <!-- If you don't have an image yet, you can remove the img tag above and it will show the gradient background -->
+            </div>
+
+            <div class="about-text">
+                <h3>My Story</h3>
+                <p>Hi there! I'm Terry Jeffery, the creator and maker behind ReVIVE9. What began as a creative outlet in my living room has grown into a handcrafted jewelry line built on creativity, intention, and everyday style.</p>
+
+                <p>Every piece in ReVIVE9 is designed and handmade by me—no mass production, no shortcuts, no outsourcing. Just thoughtful, unique jewelry crafted with care and a genuine love for the details.</p>
+
+                <p>My goal is simple: to elevate your everyday wear with pieces that feel special, effortless, and uniquely you. Whether you're dressing up or keeping it casual, I hope ReVIVE9 brings that perfect finishing touch to your look.</p>
+
+                <p>Thank you so much for supporting handmade and for being part of the ReVIVE9 journey</p>
+
+                <p class="bio-name">— Terry Jeffery</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ReVIVE9. All rights reserved.</p>
+    </footer>
+</body>
+</html>
